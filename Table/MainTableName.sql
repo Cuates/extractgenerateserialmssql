@@ -18,7 +18,7 @@ go
 --     Purpose: Main table name
 -- ============================
 create table [dbo].[MainTableName](
-  [mtnID] [int] identity (1, 1) not null,
+  [mtnID] [bigint] identity (1, 1) not null,
   [main_serial] [nvarchar](70) not null,
   [created_date] [datetime2](7) null,
   [modified_date] [datetime2](7) null,
