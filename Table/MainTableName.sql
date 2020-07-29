@@ -1,36 +1,36 @@
-USE [DatabaseName]
-GO
+use [DatabaseName]
+go
 
 -- Set ansi nulls
-SET ANSI_NULLS ON
-GO
+set ansi_nulls on
+go
 
 -- Set quoted identifier
-SET QUOTED_IDENTIFIER ON
-GO
+set quoted_identifier on
+go
 
 -- ===========================
---       File: MainTableName
---    Created: 07/26/2020
---    Updated: 07/26/2020
--- Programmer: Cuates
---  Update By: Cuates
---    Purpose: Main table name
+--        File: MainTableName
+--     Created: 07/26/2020
+--     Updated: 07/29/2020
+--  Programmer: Cuates
+--   Update By: Cuates
+--     Purpose: Main table name
 -- ===========================
-CREATE TABLE [dbo].[MainTableName](
+create table [dbo].[MainTableName](
   [mtnID] [int] identity (1, 1) not null,
   [main_serial] [nvarchar](70) not null,
   [created_date] [datetime2](7) null,
   [modified_date] [datetime2](7) null,
-  CONSTRAINT [UK_MainTableName_main_serial] UNIQUE NONCLUSTERED
+  constraint [UK_MainTableName_main_serial] unique nonclustered
   (
-    [main_serial] ASC
-  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
+    [main_serial] asc
+  )with (pad_index = off, statistics_norecompute = off, ignore_dup_key = off, allow_row_locks = on, allow_page_locks = on) on [primary]
+) on [primary]
+go
 
-ALTER TABLE [dbo].[MainTableName] ADD  DEFAULT (getdate()) FOR [created_date]
-GO
+alter table [dbo].[MainTableName] add  default (getdate()) for [created_date]
+go
 
-ALTER TABLE [dbo].[MainTableName] ADD  DEFAULT (getdate()) FOR [modified_date]
-GO
+alter table [dbo].[MainTableName] add  default (getdate()) for [modified_date]
+go

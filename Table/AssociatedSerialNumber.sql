@@ -1,41 +1,41 @@
-USE [DatabaseName]
-GO
+use [DatabaseName]
+go
 
 -- Set ansi nulls
-SET ANSI_NULLS ON
-GO
+set ansi_nulls on
+go
 
 -- Set quoted identifier
-SET QUOTED_IDENTIFIER ON
-GO
+set quoted_identifier on
+go
 
 -- =====================================
 --        File: AssociatedSerialNumber
 --     Created: 07/26/2020
---     Updated: 07/26/2020
+--     Updated: 07/29/2020
 --  Programmer: Cuates
 --   Update By: Cuates
 --     Purpose: Associated serial number
 -- =====================================
-CREATE TABLE [dbo].[AssociatedSerialNumber](
-  [asnID] [int] identity (1, 1) not null,
+create table [dbo].[AssociatedSerialNumber](
+  [asnID] [bigint] identity (1, 1) not null,
   [temp_serial] [nvarchar](70) null,
   [main_serial] [nvarchar](70) null,
   [created_date] [datetime2](7) null,
   [modified_date] [datetime2](7) null,
-  CONSTRAINT [UK_AssociatedSerialNumber_main_serial] UNIQUE NONCLUSTERED
+  constraint [UK_AssociatedSerialNumber_main_serial] unique nonclustered
   (
-    [main_serial] ASC
-  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
-  CONSTRAINT [UK_AssociatedSerialNumber_temp_serial] UNIQUE NONCLUSTERED
+    [main_serial] asc
+  )with (pad_index = off, statistics_norecompute = off, ignore_dup_key = off, allow_row_locks = on, allow_page_locks = on) on [primary],
+  constraint [UK_AssociatedSerialNumber_temp_serial] unique nonclustered
   (
-    [temp_serial] ASC
-  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
+    [temp_serial] asc
+  )with (pad_index = off, statistics_norecompute = off, ignore_dup_key = off, allow_row_locks = on, allow_page_locks = on) on [primary]
+) on [primary]
+go
 
-ALTER TABLE [dbo].[AssociatedSerialNumber] ADD  DEFAULT (getdate()) FOR [created_date]
-GO
+alter table [dbo].[AssociatedSerialNumber] add  default (getdate()) for [created_date]
+go
 
-ALTER TABLE [dbo].[AssociatedSerialNumber] ADD  DEFAULT (getdate()) FOR [modified_date]
-GO
+alter table [dbo].[AssociatedSerialNumber] ADD  DEFAULT (getdate()) FOR [modified_date]
+go
