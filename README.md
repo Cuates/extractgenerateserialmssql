@@ -30,7 +30,6 @@
 * ltrim
 * rtrim
 * getdate
-* getdate
 * format
 * count
 * substring
