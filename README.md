@@ -20,6 +20,7 @@
 * [Omit Characters](https://github.com/Cuates/omitcharactersmssql)
 
 ### Prerequisite Data Types
+* bigint
 * int
 * smallint
 * nvarchar
