@@ -37,5 +37,5 @@ go
 alter table [dbo].[AssociatedSerialNumber] add  default (getdate()) for [created_date]
 go
 
-alter table [dbo].[AssociatedSerialNumber] ADD  DEFAULT (getdate()) FOR [modified_date]
+alter table [dbo].[AssociatedSerialNumber] add  default (getdate()) for [modified_date]
 go

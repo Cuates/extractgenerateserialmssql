@@ -9,14 +9,14 @@ go
 set quoted_identifier on
 go
 
--- ===========================
+-- ============================
 --        File: MainTableName
 --     Created: 07/26/2020
 --     Updated: 07/29/2020
 --  Programmer: Cuates
 --   Update By: Cuates
 --     Purpose: Main table name
--- ===========================
+-- ============================
 create table [dbo].[MainTableName](
   [mtnID] [int] identity (1, 1) not null,
   [main_serial] [nvarchar](70) not null,
