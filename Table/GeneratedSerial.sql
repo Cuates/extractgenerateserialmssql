@@ -23,7 +23,7 @@ create table [dbo].[GeneratedSerial](
   [modified_date] [datetime2](7) null,
   [generated_serial] [nvarchar](70) not null,
   [searchable_serial] [nvarchar](70) null,
-  [serial_family] [nvarchar](255) null,
+  [serial_family] [nvarchar](70) null,
   constraint [UK_GeneratedSerial_generated_serial_family] unique nonclustered
   (
     [generated_serial],
