@@ -12,7 +12,7 @@ go
 -- =============================
 --        File: GeneratedSerial
 --     Created: 07/26/2020
---     Updated: 07/29/2020
+--     Updated: 08/26/2020
 --  Programmer: Cuates
 --   Update By: Cuates
 --     Purpose: Generated serial
@@ -30,9 +30,6 @@ create table [dbo].[GeneratedSerial](
     [serial_family]
   )with (pad_index = off, statistics_norecompute = off, ignore_dup_key = off, allow_row_locks = on, allow_page_locks = on) on [primary]
 ) on [primary]
-go
-
-alter table [dbo].[GeneratedSerial] add  default ((0)) for [consumed]
 go
 
 alter table [dbo].[GeneratedSerial] add  default (getdate()) for [created_date]
